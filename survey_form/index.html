@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <title>
+         registration-form
+    </title>
+ 
+    <style>
+ 
+         
+        body {
+            text-align: center;
+             }
+        form {
+            background-color: rgb(138, 94, 221);
+            text-decoration: bold;
+            color: purple;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+
+        }
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+ 
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+ 
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+ 
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"]{
+            display: inline-block;
+            width: auto;
+        }
+ 
+        /* Styling Button */
+        button {
+            background-color: orange;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+      button:hover{
+        background-color:rgb(108, 82, 150); 
+        }
+        p{
+            display: none;
+        }
+        #A:hover p{
+            display: inline;
+        }
+    </style>
+</head>
+  
+<body>
+    <h1 style="color: rgb(0, 0, 0);">food restaurent Survey Form</h1>
+  
+    <!-- Create Form -->
+    <form id="form">
+ 
+        <!-- Details -->
+        <div class="form-control">
+            <label for="name" id="label-name">
+                Name
+            </label>
+ 
+            <!-- Input Type Text -->
+            <input type="text"  id="name" placeholder="Enter your name"  minlength="3" required pattern="[a-Z]" />
+            
+                  
+        </div>
+  
+        <div class="form-control">
+            <label for="email" id="label-email">
+                Email
+            </label>
+ 
+            <!-- Input Type Email-->
+            <input type="email"  id="email" placeholder="Enter your email" required pattern=".+@gmail.com" />
+            <label style="margin-top: 15px;" for="">mobile Number</label>
+           <input style="margin-top: 20px;" placeholder="Phone number" type="number" name="" id="" required minlength="10" maxlength="10" >
+                  
+                   
+        </div>
+  
+        <div class="form-control">
+            <label for="age" id="label-age">
+                Age
+            </label>
+ 
+            <!-- Input Type Text -->
+            <input type="number" id="age"  placeholder="Enter your age" required maxlength="3" minlength="1" />
+        </div>
+  
+        <div class="form-control">
+            <label for="role" id="label-role">
+                food items
+            </label>
+             
+            <!-- Dropdown options -->
+            <select name="role" id="role">
+                <option value="select">----select---- </option>
+                <option value="burger">burger was not tasty</option>
+                <option value="pizza">pizza was not tasty</option>
+                <option value="Sandwich">Sandwich was not tasty</option>
+                <option value="Sandwich">Nothing all good</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+  
+        <div class="form-control">
+            <label style="color: rgb(0, 0, 0); font-size: large;">
+                Our service
+               </label>
+ 
+            <!-- Input Type Radio Button -->
+        
+                <input type="radio" name="poor" value="service">poor</input>
+            
+            
+                <input type="radio"name="good" value="service">good</input>
+        
+
+                <input type="radio"name="better" value="service">better</input>
+        
+        
+                <input type="radio" name="best" value="service">best</input>
+        
+        </div>
+
+  
+        <div class="form-control">
+            <label for="comment">
+                Any suggestions you want to give.
+            </label>
+            
+ 
+            <!-- multi-line text input control -->
+            <textarea name="comment" id="comment"placeholder></textarea>
+        </div>
+
+        <!-- Multi-line Text Input Control -->
+        <button type="submit" value="submit">Submit</button>
+    </form>
+</body>
+  
+</html>
