@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>count down timer</title>
+
+        <style type="text/css">
+        h1{
+            font-family: sevensegment;
+            font-size: 15em;
+        }
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <h1 id="count">1000</h1>
+        </div>
+        <script type="text/javascript">
+            var counter = 1000;
+            setInterval(function(){
+                counter--;
+
+                if(counter >= 0 ){
+                    id = document.getElementById("count");
+                    id.innerHTML = counter;
+                }
+            });
+            </script>
+    </body>
+</html>
