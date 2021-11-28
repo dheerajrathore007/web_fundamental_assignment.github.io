@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title>TO-DO List</title>
+   <style>
+        body{
+            background-size: cover;
+        }
+        div{
+            text-align: center;
+            padding-left: 70px;
+            padding-bottom: 30px;
+        }   
+        button{
+            margin-left: 30px;
+            border-radius: 25px;
+        }
+        button:hover{
+            background-color:rgb(50, 5, 255);
+        }
+        input{
+            border-radius: 35px;
+        }
+        label{
+            font-size: 35px;
+            color: rgb(4, 0, 255);
+        }
+
+   </style>
+</head>
+<body>
+    <div>
+    <h1>To-Do List</h1>
+    <div class="inputDiv">
+    	 <label> Enter your item:</label> 
+         <input type="text" class="input">
+    	   <button class="add">Add item</button><br>
+           <span id="error"></span>
+    </div>
+    <div class="box">
+    </div>
+    <script>
+        const container = document.querySelector('.box');
+var inputValue = document.querySelector('.input');
+const add = document.querySelector('.add');
+class item{
+constructor(name){
+this.createItem(name);
+}
+createItem(name){
+var itemBox = document.createElement('div');
+itemBox.classList.add('item');
+
+var input = document.createElement('input');
+input.type = "text";
+input.disabled = true;
+input.value = name;
+input.classList.add('item_input');
+
+var edit = document.createElement('button');
+edit.classList.add('edit');
+edit.innerHTML = "Edit";
+edit.addEventListener('click', () => this.edit(input, name));
+
+var remove = document.createElement('button');
+remove.classList.add('remove');
+remove.innerHTML = "Remove";
+remove.addEventListener('click', () => this.remove(itemBox, name));
+
+container.appendChild(itemBox);
+
+itemBox.appendChild(input);
+itemBox.appendChild(edit);
+itemBox.appendChild(remove);
+
+}
+
+edit(input, name){
+if(input.disabled == true){
+   input.disabled = !input.disabled;
+}
+else{
+    input.disabled = !input.disabled;
+   
+}
+}
+
+ remove(itemBox, name){
+itemBox.parentNode.removeChild(itemBox);
+ }
+}
+
+add.addEventListener('click', check);
+window.addEventListener('keydown', (e) => {
+if(e.which == 13){
+check();
+}
+})
+
+function check(){
+if(inputValue.value=="")
+    {
+        document.getElementById("error").innerHTML="Enter the value";
+        return;
+    } else
+    {
+        document.getElementById("error").innerHTML="";
+        new item(inputValue.value);
+    }
+}
+for (var v = 0 ; v < input.length ; v++){
+new item(input[v]);
+}
+    </script>
+</div>             
+</body>
+</html>
